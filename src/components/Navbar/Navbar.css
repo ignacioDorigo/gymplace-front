@@ -1,3 +1,4 @@
+/* Estructura general */
 .contenedor {
   width: 90%;
   margin: 0 auto;
@@ -18,28 +19,81 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 1.5rem 0;
+  /* 👈 agrega altura arriba y abajo */
 
 }
 
+/* Logo */
 .navbar__logo {
   text-decoration: none;
 }
 
+/* Enlaces */
 .navbar__enlace {
   text-decoration: none;
-  /* font-weight: bold; */
   font-weight: 500;
   color: #384152;
   font-size: 1.6rem;
-  padding: 3rem 2rem;
+  padding: 2rem 1.2rem;
+  transition: color 0.2s ease-in-out;
 }
 
 .navbar__enlace:hover {
   color: #6cae82;
 }
 
+/* Menú derecho */
 .navbar__derecha {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/* Íconos */
+.svg__account {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #384152;
+  cursor: pointer;
+}
+
+.svg__account:hover {
+  color: #6cae82;
+}
+
+/* Hamburguesa oculta por defecto en desktop */
+.navbar__hamburguesa {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #384152;
+}
+
+.navbar__hamburguesa:hover {
+  color: #6cae82;
+}
+
+/* Menú móvil oculto por defecto */
+.navbar__menu-movil {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar__derecha {
+    display: none;
+  }
+
+  .navbar__hamburguesa {
+    display: block;
+  }
+
+  .navbar__menu-movil.activo {
+    display: flex;
+  }
 }
