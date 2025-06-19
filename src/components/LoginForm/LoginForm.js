@@ -41,7 +41,9 @@ export default function LoginForm() {
           text: "¡Bienvenido de nuevo!",
           confirmButtonColor: "#6cae82",
         });
-        login(respuesta.data);
+        console.log("email");
+        console.log(respuesta.data.email);
+        login(respuesta.data.email);
         navigate("/home");
 
         // Podés redirigir después con navigate("/home") si usás useNavigate de React Router

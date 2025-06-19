@@ -13,9 +13,8 @@
 
 /* ---------- fondo y posicionamiento ---------- */
 .footer__bg {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: static;
+  /* o eliminá la propiedad */
   width: 100%;
   background-color: #fff;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
