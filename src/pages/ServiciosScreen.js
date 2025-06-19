@@ -6,6 +6,7 @@ export default function ServiciosScreen() {
   return (
     <div>
       <Navbar></Navbar>
+      <h1>Estoy en ServiciosScreens</h1>
       <Footer></Footer>
     </div>
   );

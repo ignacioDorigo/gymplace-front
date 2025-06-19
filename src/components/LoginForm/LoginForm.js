@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./LoginForm.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineEmail, MdOutlineLock } from "react-icons/md";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginForm() {
   const [verPassword, setVerPassword] = useState(false);
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate(); // justo debajo de useState y useContext
 
   const estadoInicial = { email: "", password: "" };
 
@@ -24,7 +29,29 @@ export default function LoginForm() {
     initialValues: estadoInicial,
     validationSchema: validacion,
     onSubmit: async (formulario) => {
-      console.log(formulario);
+      try {
+        const respuesta = await axios.post(
+          `http://localhost:8080/gymplace/login?email=${formulario.email}&password=${formulario.password}`
+        );
+
+        Swal.fire({
+          icon: "success",
+          title: "Inicio de sesión exitoso",
+          text: "¡Bienvenido de nuevo!",
+          confirmButtonColor: "#6cae82",
+        });
+        login(respuesta.data);
+        navigate("/home");
+
+        // Podés redirigir después con navigate("/home") si usás useNavigate de React Router
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Error al iniciar sesión",
+          text: `${error.response.data}`,
+          confirmButtonColor: "#d33",
+        });
+      }
     },
   });
 

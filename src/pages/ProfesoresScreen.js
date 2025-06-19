@@ -5,6 +5,7 @@ export default function ProfesoresScreen() {
   return (
     <div>
       <Navbar></Navbar>
+      <h1>Estoy en ProfesoresScreen</h1>
       <Footer></Footer>
     </div>
   );

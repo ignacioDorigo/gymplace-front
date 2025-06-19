@@ -6,6 +6,7 @@ export default function CalendarioScreen() {
   return (
     <div>
       <Navbar></Navbar>
+      <h1>Estoy en CalendarioScreen</h1>
       <Footer></Footer>
     </div>
   );

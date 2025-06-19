@@ -6,6 +6,7 @@ export default function HomeScreen() {
   return (
     <div>
       <Navbar></Navbar>
+      <h1>Estoy en HomeScreen</h1>
       <Footer></Footer>
     </div>
   );
