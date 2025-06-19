@@ -100,16 +100,6 @@
     background-color: #5ca272;
 }
 
-.form__olvidaste {
-    color: #6cae82;
-    font-size: 1.3rem;
-    margin-top: -0.25rem;
-    text-decoration: none;
-    display: flex;
-    width: max-content;
-    margin: 0;
-    align-self: flex-end;
-}
 
 .div__noTenesCuenta {
     text-align: center;
@@ -121,6 +111,7 @@
     text-decoration: none;
     color: #6cae82;
 }
+
 
 .form__error {
     color: red;

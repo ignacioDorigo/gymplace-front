@@ -26,7 +26,7 @@ export default function RegisterForm() {
       email: "",
       password: "",
       fecha_nacimiento: "",
-      tipo_usuario: "cliente",
+      tipo_usuario: "",
     },
     validationSchema: Yup.object({
       nombre: Yup.string().required("El nombre es obligatorio"),
@@ -169,10 +169,13 @@ export default function RegisterForm() {
       {/* Tipo de usuario */}
       <select
         name="tipo_usuario"
-        className="form__input"
+        className="form__input register__select"
         onChange={formik.handleChange}
         value={formik.values.tipo_usuario}
       >
+        <option value="" disabled>
+          -- Tipo Cliente --
+        </option>
         <option value="cliente">Cliente</option>
         <option value="entrenador">Entrenador</option>
       </select>
@@ -185,6 +188,13 @@ export default function RegisterForm() {
       >
         Registrarse
       </button>
+
+      <div className="div__noTenesCuenta">
+        <p>
+          Ya tengo una cuenta.
+          <Link to="/login"> Iniciar Sesión</Link>
+        </p>
+      </div>
 
       {/* Mensajes de estado */}
       {formik.status?.success && (
