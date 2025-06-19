@@ -31,7 +31,8 @@ export default function LoginForm() {
     onSubmit: async (formulario) => {
       try {
         const respuesta = await axios.post(
-          `http://localhost:8080/gymplace/login?email=${formulario.email}&password=${formulario.password}`
+          "http://localhost:8080/gymplace/login",
+          { email: formulario.email, password: formulario.password }
         );
 
         Swal.fire({
