@@ -5,14 +5,11 @@
     border-radius: 10px;
     width: 100%;
     max-width: 40rem;
-    /* margin-left: auto; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
-    /* align-items: center; */
 }
-
 
 
 form a {
@@ -89,4 +86,33 @@ form a {
 
 .form__button:hover {
     background-color: #5ca272;
+}
+
+.form__olvidaste {
+    color: #6cae82;
+    font-size: 1.3rem;
+    margin-top: -0.25rem;
+    text-decoration: none;
+    display: flex;
+    width: max-content;
+    margin: 0;
+    align-self: flex-end;
+
+}
+
+.div__noTenesCuenta {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.div__noTenesCuenta a {
+    text-decoration: none;
+    color: #6cae82;
+}
+
+.form__error {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
 }

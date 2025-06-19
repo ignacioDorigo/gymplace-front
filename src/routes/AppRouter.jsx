@@ -9,6 +9,7 @@ import CalendarioScreen from '../pages/CalendarioScreen'
 import ServiciosScreen from '../pages/ServiciosScreen'
 import LoginScreen from '../pages/LoginScreen'
 import RegisterScreen from '../pages/RegisterScreen'
+import ResetPasswordScreen from '../pages/ResetPasswordScreen'
 
 export default function AppRouter() {
     return (
@@ -22,6 +23,7 @@ export default function AppRouter() {
                 <Route path='/perfil' element={<PerfilScreen />} />
                 <Route path='/register' element={<RegisterScreen />} />
                 <Route path='/login' element={<LoginScreen />} />
+                <Route path='/resetPassword' element={<ResetPasswordScreen />} />
             </Routes >
         </BrowserRouter >
     )
