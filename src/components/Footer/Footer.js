@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className="footer__bg">
       <footer className="footer contenedor">
-        <div className="logo__contenedor">
+        <div className="footer__logo__contenedor">
           <Link to="/home">
             <img
               src="/logoNegro.png"
