@@ -8,8 +8,14 @@
     border-radius: 5px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .perfil__contenido {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .perfil__contenido__izquierda {
@@ -73,15 +79,28 @@
 
 .perfil__boton {
     display: block;
-    margin: 1rem auto;
-    padding: 0.8rem 2rem;
     font-size: 1rem;
+    font-weight: bold;
     border: none;
-    background-color: #6cae82;
     color: white;
-    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #eee;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+}
+
+.perfil__opcion__cerrarSesion {
+    background-color: #dc3545;
 }
 
 .perfil__boton:hover {

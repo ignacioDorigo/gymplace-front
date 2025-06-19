@@ -146,12 +146,6 @@ export default function PerfilScreen() {
                 </p>
               </div>
             )}
-            <button
-              onClick={cerrarSesion}
-              className="perfil__boton perfil__boton--cerrar"
-            >
-              Cerrar Sesión
-            </button>
           </div>
 
           <div className="perfil__contenido__derecha">
@@ -162,6 +156,14 @@ export default function PerfilScreen() {
             <div className="perfil__opcion">
               <IoIosArrowForward className="perfil__opcion__icono" />
               <span className="perfil__opcion__texto">Cambiar apellido</span>
+            </div>
+            <div className="perfil__opcion__cerrarSesion">
+              <button
+                onClick={cerrarSesion}
+                className="perfil__boton perfil__boton--cerrar"
+              >
+                Cerrar Sesión
+              </button>
             </div>
           </div>
         </div>
