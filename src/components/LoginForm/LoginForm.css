@@ -111,7 +111,7 @@ form a {
     color: #6cae82;
 }
 
-.form__error {
+div .form__error {
     color: red;
     font-size: 1.2rem;
     margin-top: 0.5rem;
@@ -137,3 +137,4 @@ form a {
     color: #999;
     cursor: pointer;
 }
+

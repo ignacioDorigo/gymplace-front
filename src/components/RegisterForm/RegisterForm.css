@@ -12,16 +12,6 @@
     margin: 0 auto;
 }
 
-.form a {
-    width: max-content;
-    margin: 0 auto;
-}
-
-.form__logo {
-    width: max-content;
-    height: 9rem;
-    margin: 0 auto;
-}
 
 .form__titulo {
     font-size: 2.4rem;
@@ -113,8 +103,8 @@
 }
 
 
-.form__error {
+div .form__error {
     color: red;
     font-size: 1.2rem;
-    margin-top: -0.25rem;
+    margin-top: 0.5rem;
 }
