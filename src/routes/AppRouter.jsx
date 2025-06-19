@@ -7,6 +7,8 @@ import PerfilScreen from '../pages/PerfilScreen'
 import ProfesoresScreen from '../pages/ProfesoresScreen'
 import CalendarioScreen from '../pages/CalendarioScreen'
 import ServiciosScreen from '../pages/ServiciosScreen'
+import LoginScreen from '../pages/LoginScreen'
+import RegisterScreen from '../pages/RegisterScreen'
 
 export default function AppRouter() {
     return (

@@ -1,5 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function LoginScreen() {
-  return <div>LoginScreen</div>;
+  return (
+    <div>
+      <Navbar></Navbar>
+    </div>
+  );
 }

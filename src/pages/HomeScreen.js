@@ -1,5 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function HomeScreen() {
-  return <div>HomeScreen</div>;
+  return (
+    <div>
+      <Navbar></Navbar>
+    </div>
+  );
 }
