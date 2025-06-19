@@ -13,7 +13,9 @@
     /* align-items: center; */
 }
 
-a {
+
+
+form a {
     width: max-content;
     margin: 0 auto;
 }
