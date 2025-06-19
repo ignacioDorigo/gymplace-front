@@ -1,10 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
+import RegisterForm from "../components/RegisterForm/RegisterForm";
+import "./RegisterScreen.css";
 
 export default function RegisterScreen() {
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="register-screen">
+      <div className="register-screen__formulario">
+        <RegisterForm />
+      </div>
+      <div className="register-screen__imagen" />
     </div>
   );
 }
