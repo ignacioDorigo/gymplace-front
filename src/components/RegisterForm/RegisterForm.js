@@ -13,11 +13,12 @@ import {
   IoEyeOffOutline,
 } from "react-icons/io5";
 import "./RegisterForm.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function RegisterForm() {
-  // 👁️👁️  Estado para alternar visibilidad
   const [verPassword, setVerPassword] = useState(false);
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -44,15 +45,27 @@ export default function RegisterForm() {
         "La fecha de nacimiento es obligatoria"
       ),
     }),
-    onSubmit: async (values, { setSubmitting, setStatus }) => {
+    onSubmit: async (values, { setSubmitting }) => {
       try {
         const res = await axios.post(
           "http://localhost:8080/gymplace/register",
           values
         );
-        setStatus({ success: res.data });
+
+        await Swal.fire({
+          title: "Registro exitoso",
+          text: "¡Bienvenido a GymPlace!",
+          icon: "success",
+          confirmButtonText: "Ir al inicio",
+        });
+
+        navigate("/home");
       } catch (err) {
-        setStatus({ error: err.response?.data || "Error en el registro" });
+        Swal.fire({
+          title: "Error",
+          text: err.response?.data || "Error en el registro",
+          icon: "error",
+        });
       } finally {
         setSubmitting(false);
       }
@@ -120,7 +133,7 @@ export default function RegisterForm() {
         <div className="form__error">{formik.errors.email}</div>
       )}
 
-      {/* Contraseña con ojo */}
+      {/* Contraseña */}
       <div className="form__input-wrapper">
         <MdOutlineLock className="svg__input" />
         <input
@@ -195,14 +208,6 @@ export default function RegisterForm() {
           <Link to="/login"> Iniciar Sesión</Link>
         </p>
       </div>
-
-      {/* Mensajes de estado */}
-      {formik.status?.success && (
-        <p style={{ color: "green" }}>{formik.status.success}</p>
-      )}
-      {formik.status?.error && (
-        <p className="form__error">{formik.status.error}</p>
-      )}
     </form>
   );
 }
