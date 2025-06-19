@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginForm.css";
 import { useFormik } from "formik";
-import * as Yup from "yup"; // ⬅️ importación nueva
+import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { MdOutlineEmail, MdOutlineLock } from "react-icons/md";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
 export default function LoginForm() {
+  const [verPassword, setVerPassword] = useState(false);
+
   const estadoInicial = { email: "", password: "" };
 
-  // ✅ Esquema de validación
   const validacion = Yup.object({
     email: Yup.string()
       .email("Ingresá un email válido")
@@ -20,7 +22,7 @@ export default function LoginForm() {
 
   const formik = useFormik({
     initialValues: estadoInicial,
-    validationSchema: validacion, // ⬅️ se pasa aquí
+    validationSchema: validacion,
     onSubmit: async (formulario) => {
       console.log(formulario);
     },
@@ -38,6 +40,7 @@ export default function LoginForm() {
       </p>
 
       <div className="form__campos">
+        {/* Campo Email */}
         <div className="form__campo">
           <div className="form__input-wrapper">
             <MdOutlineEmail className="svg__input" />
@@ -57,6 +60,7 @@ export default function LoginForm() {
           )}
         </div>
 
+        {/* Campo Password con ojo */}
         <div className="form__campo">
           <div className="form__input-wrapper">
             <MdOutlineLock className="svg__input" />
@@ -64,13 +68,25 @@ export default function LoginForm() {
               id="password"
               className="form__input"
               placeholder="Password"
-              type="password"
+              type={verPassword ? "text" : "password"}
               name="password"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
+            {verPassword ? (
+              <IoEyeOffOutline
+                className="svg__input__derecha"
+                onClick={() => setVerPassword(false)}
+              />
+            ) : (
+              <IoEyeOutline
+                className="svg__input__derecha"
+                onClick={() => setVerPassword(true)}
+              />
+            )}
           </div>
+
           {formik.touched.password && formik.errors.password && (
             <div className="form__error">{formik.errors.password}</div>
           )}
